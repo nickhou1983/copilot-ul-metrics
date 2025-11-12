@@ -14,17 +14,44 @@
 ## 🎯 快速开始
 
 ```bash
-# 1. 转换 JSON 到 CSV（按用户汇总）
+# 1. 生成 HTML 可视化报告（推荐）
 python3 json_to_csv.py your_data.json
 
-# 2. 安装分析工具依赖（可选）
+# 2. 生成所有文件（8个 CSV + 1个 HTML）
+python3 json_to_csv.py your_data.json -t all
+
+# 3. 安装分析工具依赖（可选）
 pip3 install -r requirements.txt
 
-# 3. 运行数据分析
+# 4. 运行数据分析
 python3 analyze_metrics.py
 ```
 
-详细使用说明请参考 [快速入门指南](QUICK_START.md)。
+详细使用说明请参考 [快速入门指南](QUICK_START.md) 和 [HTML 报告使用指南](HTML_REPORT_GUIDE.md)。
+
+## ✨ 新功能：HTML 可视化报告
+
+现在支持生成精美的 HTML 可视化报告！包含：
+
+- 📊 **整体统计指标** - 6个核心指标卡片展示
+- 🎯 **功能采用情况** - Agent、Chat 使用情况分析
+- 🏆 **TOP 15 用户排行** - 最活跃用户榜单
+- 💻 **IDE 使用统计** - 不同 IDE 的使用对比
+- 🔤 **编程语言统计** - TOP 10 语言使用情况
+
+### 使用示例
+
+```bash
+# 仅生成 HTML 报告（默认）
+python3 json_to_csv.py your_data.json
+
+# 生成所有文件（CSV + HTML）
+python3 json_to_csv.py your_data.json -t all -o ./reports
+```
+
+生成后在浏览器中打开 `*_report.html` 即可查看精美的可视化报告！
+
+详细说明请参考：[HTML 报告使用指南](HTML_REPORT_GUIDE.md)
 
 ---
 
