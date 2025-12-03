@@ -1337,8 +1337,8 @@ def build_argument_parser() -> argparse.ArgumentParser:
         "-t",
         "--type",
         choices=["user_summary", "all", "html"],
-        default="html",
-        help="导出的数据类型: user_summary(用户汇总CSV), all(所有CSV+HTML), html(仅HTML报告) [默认: html]",
+        default="all",
+        help="导出的数据类型: user_summary(用户汇总CSV), all(所有CSV+HTML), html(仅HTML报告) [默认: all]",
     )
     return parser
 
