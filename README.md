@@ -72,8 +72,10 @@ python3 json_to_csv.py your_data.json -t all -o ./reports
 | 9 | Chat Ask 接受次数 | `totals_by_feature[chat_panel_ask_mode].code_acceptance_activity_count` | Chat Ask 模式下用户接受代码的次数 |
 | 10 | Chat Ask 建议代码行数 | `totals_by_feature[chat_panel_ask_mode].loc_suggested_to_add_sum` | Chat Ask 模式建议的代码行数 |
 | 11 | Chat Ask 接受代码行数 | `totals_by_feature[chat_panel_ask_mode].loc_added_sum` | Chat Ask 模式实际被接受的代码行数 |
-| 12 | Agent Edit 添加代码行数 | `totals_by_feature[agent_edit].loc_added_sum` | Agent 编辑模式添加的代码行数 |
-| 13 | Agent Edit 删除代码行数 | `totals_by_feature[agent_edit].loc_deleted_sum` | Agent 编辑模式删除的代码行数 |
+| 12 | Chat Agent 建议代码行数 | `totals_by_feature[chat_panel_agent_mode].loc_suggested_to_add_sum` | Chat Agent 模式建议的代码行数 |
+| 13 | Chat Agent 接受代码行数 | `totals_by_feature[chat_panel_agent_mode].loc_added_sum` | Chat Agent 模式实际被接受的代码行数 |
+| 14 | Agent Edit 添加代码行数 | `totals_by_feature[agent_edit].loc_added_sum` | Agent 编辑模式添加的代码行数 |
+| 15 | Agent Edit 删除代码行数 | `totals_by_feature[agent_edit].loc_deleted_sum` | Agent 编辑模式删除的代码行数 |
 
 ### 📊 数据聚合说明
 

@@ -298,6 +298,8 @@ class CopilotMetricsConverter:
             "Chat Ask 接受次数",
             "Chat Ask 建议代码行数",
             "Chat Ask 接受代码行数",
+            "Chat Agent 建议代码行数",
+            "Chat Agent 接受代码行数",
             "Agent Edit 添加代码行数",
             "Agent Edit 删除代码行数",
         ]
@@ -317,6 +319,11 @@ class CopilotMetricsConverter:
             ask_loc_suggested = ask_metrics.get("loc_suggested_to_add_sum", 0)
             ask_loc_added = ask_metrics.get("loc_added_sum", 0)
 
+            # 提取 chat_panel_agent_mode 相关指标
+            agent_mode_metrics = self._extract_feature_metrics(record, "chat_panel_agent_mode")
+            agent_mode_loc_suggested = agent_mode_metrics.get("loc_suggested_to_add_sum", 0)
+            agent_mode_loc_added = agent_mode_metrics.get("loc_added_sum", 0)
+
             # 提取 agent_edit 相关指标
             agent_edit_metrics = self._extract_feature_metrics(record, "agent_edit")
             agent_edit_loc_added = agent_edit_metrics.get("loc_added_sum", 0)
@@ -335,6 +342,8 @@ class CopilotMetricsConverter:
                     "Chat Ask 接受次数": ask_acceptance,
                     "Chat Ask 建议代码行数": ask_loc_suggested,
                     "Chat Ask 接受代码行数": ask_loc_added,
+                    "Chat Agent 建议代码行数": agent_mode_loc_suggested,
+                    "Chat Agent 接受代码行数": agent_mode_loc_added,
                     "Agent Edit 添加代码行数": agent_edit_loc_added,
                     "Agent Edit 删除代码行数": agent_edit_loc_deleted,
                 }
